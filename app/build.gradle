@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+    defaultConfig {
+        applicationId "com.hodinv.music"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 6
+        versionName "0.5.6"
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'release'
+            keyPassword 'ShAU&RKnp6'
+            storeFile file('../key/release.jks')
+            storePassword 'ShAU&RKnp6'
+        }
+    }
+
+    buildTypes {
+        build {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            useProguard false
+        }
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            useProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        applicationVariants.all { variant ->
+            variant.outputs.each { output ->
+                def apk = output.outputFile
+                if (apk.getName().endsWith(".apk") && !apk.getName().contains("unaligned")) {
+                    def newName = "Synthesizer-" + variant.buildType.name + "-" + defaultConfig.versionName + ".apk"
+                    output.outputFile = new File(apk.parentFile, newName)
+                }
+            }
+        }
+
+    }
+    lintOptions {
+        abortOnError true
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.support:design:26.1.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.pawegio.kandroid:kandroid:0.8.5@aar'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://maven.google.com/'
+        name 'Google'
+    }
+}

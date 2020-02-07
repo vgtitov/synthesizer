@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             app:layout_behavior="@string/appbar_scrolling_view_behavior"
+             tools:context="com.hodinv.music.screens.player.PlayerActivity"
+             tools:showIn="@layout/activity_player">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/colorMoll"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_c_moll"
+                style="@style/MusicButton"/>
+
+            <Button
+                android:id="@+id/btn_d_moll"
+                style="@style/MusicButton"/>
+
+            <Button
+                android:id="@+id/btn_e_moll"
+                style="@style/MusicButton"/>
+
+            <Button
+                android:id="@+id/btn_f_moll"
+                style="@style/MusicButton"/>
+
+            <Button
+                android:id="@+id/btn_g_moll"
+                style="@style/MusicButton"/>
+
+            <Button
+                android:id="@+id/btn_a_moll"
+                style="@style/MusicButton"/>
+
+            <Button
+                android:id="@+id/btn_h_moll"
+                style="@style/MusicButton"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/colorDur"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_c_dur"
+                style="@style/MusicButton"/>
+
+            <Button
+                android:id="@+id/btn_d_dur"
+                style="@style/MusicButton"/>
+
+            <Button
+                android:id="@+id/btn_e_dur"
+                style="@style/MusicButton"/>
+
+            <Button
+                android:id="@+id/btn_f_dur"
+                style="@style/MusicButton"/>
+
+            <Button
+                android:id="@+id/btn_g_dur"
+                style="@style/MusicButton"/>
+
+            <Button
+                android:id="@+id/btn_a_dur"
+                style="@style/MusicButton"/>
+
+            <Button
+                android:id="@+id/btn_h_dur"
+                style="@style/MusicButton"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lyt_labels"
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <TextView
+            style="@style/MusicButtonInfo"
+            android:text="@string/note_c"/>
+
+        <TextView
+            style="@style/MusicButtonInfo"
+            android:text="@string/note_d"/>
+
+        <TextView
+            style="@style/MusicButtonInfo"
+            android:text="@string/note_e"/>
+
+        <TextView
+            style="@style/MusicButtonInfo"
+            android:text="@string/note_f"/>
+
+        <TextView
+            style="@style/MusicButtonInfo"
+            android:text="@string/note_g"/>
+
+        <TextView
+            style="@style/MusicButtonInfo"
+            android:text="@string/note_a"/>
+
+        <TextView
+            style="@style/MusicButtonInfo"
+            android:text="@string/note_h"/>
+
+    </LinearLayout>
+</FrameLayout>

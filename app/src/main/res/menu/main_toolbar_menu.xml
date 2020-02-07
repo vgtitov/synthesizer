@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_sound_settings"
+        android:icon="@drawable/clef"
+        android:title="Sound settings"
+        app:showAsAction="always"
+        >
+
+    </item>
+    <item
+        android:id="@+id/menu_stop_sound"
+        android:icon="@android:drawable/ic_media_pause"
+        android:title="Stop sound"
+        app:showAsAction="always"
+        />
+</menu>
